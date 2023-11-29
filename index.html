@@ -1,163 +1,140 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <title>module2-solution</title>
-    <style>
-    /*basic style*/
-    * {
-        box-sizing: border-box;
+    <head>
+        <title>login reg form</title>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
     }
-
-    body {
-        background-color: white;
+    body{
+        font-family:verdana,geneva,tahoma,sans-serif;
     }
-
-    h1 {
-       margin-bottom: 15px;
-    text-align: center;
-    color: black;
-    font-size: 50px;
+    .container{
+        width:100%;
+        height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background-color: 3e8e8e8;
     }
-
-    section {
-        position: relative;
-        padding: 15px;
-        width: 90%;
+    .main{
+        position:relative;
+        display:flex;
+        flex-direction:column ;
+        background-color: #240046;
+        max-height:450px;
+        width:400px;
+        overflow:hidden;
+        border-radius:12px;
+        box-shadow:rgba(59,0,130,0.442)0px 30px 90px;
     }
-
-    p {
-        position: relative;
-        clear: right;
+    .form{
+        display:flex;
+        flex-direction: column;
+        gap:14px;
+        padding:24px;
     }
-
-    div {
-        position: relative;
-        background-color: gray;
-        border: 3.5px solid black;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: auto;
+    #chk{
+        display:none;
+    
     }
+    .login
+    {
+        position:relative;
+        width:100%;
+        height:100%;
 
-    .sub1 {
-        float: right;
-        width: 100px;
-        padding: 5px;
-        margin: -3px -3px 0px;
-        border: 3.5px solid black;
-        text-align: center;
-        font-size: 125%;
+    }
+    .login label{
+        margin:5% 0 5%;
+    }
+    label{
+        color:#fff;
+        font-size: 2rem;
+        justify-content: center;
+        display: flex;
         font-weight: bold;
-        background-color: #FFB6C1;
+        cursor:pointer;
+        transition: .5s ease-in-out;
 
     }
-
-    .sub2 {
-        float: right;
-        color: white;
-        width: 100px;
-        padding: 5px;
-        margin: -3px -3px 0px;
-        border: 3.5px solid black;
-        text-align: center;
-        font-size: 125%;
-        font-weight: bold;
-        background-color: #FF0000;
+    .input{
+        width:100%;
+        height:40px;
+        font-size:1rem;
+        background: #e0dede;
+        padding:10px;
+        margin-top:15px;
+        border:none;
+        outline:none;
+        border-radius:4px ;
 
     }
-
-    .sub3 {
-        color: black;
-        float: right;
-        width: 100px;
-        padding: 5px;
-         margin: -3px -3px 0px;
-        border: 3.5px solid black;
-        text-align: center;
-        font-size: 125%;
-        font-weight: bold;
-        background-color: rgb(223, 212, 121);
+    .register{
+        background:#eee;
+        border-radius:60% / 10%;
+        transition: .8s ease-in-out;
 
     }
-
-    .content {
-        padding: 5px;
-        border: none;
-        background-color: gray;
-        font-family: Helvetica;
-        color: black;
-        margin: 3px ;
-        height: 150px;
-        overflow: auto;
+    .register label{
+        color:#573b8a;
+        transform: scale(0.6);
     }
-
-    .row {
-        width: 90%;
+    #chk:checked ~ .register{
+        transform:translateY(-68%);
     }
-
-    /*desktop version*/
-    @media (min-width: 992px) {
-        .column-lg-4 {
-            float: left;
-            width: 33.33%;
-        }
+    #chk:checked ~ .register label {
+transform: scale(1);
+margin-bottom: .5rem;
     }
-
-    /*tablet version*/
-    @media (min-width: 768px) and (max-width: 991px) {
-        .colmn-md-6 {
-            float: left;
-            width: 50%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .colmn-md-12 {
-            float: left;
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-        }
+     #chk:checked ~ .login label{
+        transform:scale(.6);
     }
+    .form button{
+        width:70px;
+        height: 40px;
+        margin:15px;
+        color:#fff;
+        background: #573b8a;
+        font-size:1rem;
+        font-weight:bold;
+        border:none;
+        border-radius: 4px;
+        cursor:pointer;
+        transition:.2s ease-in;
 
-    /*mobile version*/
-    @media (max-width: 767px) {
-        .colmn-sm-12 {
-            float: left;
-            width: 100%;
-        }
     }
-    </style>
-</head>
-
-
-<body>
-    <h1>Our Menu</h1>
-    <section class="column-lg-4 colmn-md-6 colmn-sm-12">
-        <div>
-            <p class="sub1">Chicken</p>
-            <p class="content">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-            </p>
+.form button:hover{
+    background-color:#6d44b8;
+}
+     
+    
+</style> 
+    </head>
+    <body>
+        <div class="container">
+            <div class="main">
+                <input type="chechkbox" id="chk" aria-hidden="true">
+                <div class="login">
+                    <form clss="form">
+                        <label for="chk" aria-hidden="true">Log in</label>
+                        <input class="input" type="email" placeholder="email" required>
+                        <input class="input" type="password" placeholder="password" required>
+                        <button>Login in</button>
+                    </form>
+                </div>
+                <div class-="register">
+                    <form class="form">
+                        <input class="input" type="text" name="txt" placeholder="username" required>
+                        <input class="input" type="text" name="email" placeholder="email" required>
+                        <input class="input" type="text" name="pswd" placeholder="password" required>
+                        <button>register</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </section>
-    <section class="column-lg-4 colmn-md-6 colmn-sm-12">
-        <div>
-            <p class="sub2">Beef</p>
-            <p class="content">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-        </div>
-    </section>
-    <section class="column-lg-4 colmn-md-12 colmn-sm-12">
-        <div>
-            <p class="sub3">Sushi</p>
-            <p class="content">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-            </p>
-        </div>
-</body>
 
+    </body>
 </html>
